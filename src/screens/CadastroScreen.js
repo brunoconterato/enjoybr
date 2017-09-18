@@ -11,28 +11,31 @@ import {
   TouchableHighlight,
   KeyboardAvoidingView
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Actions } from 'react-native-router-flux';
 
 export default class CadastroScreen extends Component {
   render() {
     return (
-        <KeyboardAvoidingView behavior="padding" style={styles.view}>
+        <KeyboardAwareScrollView style={styles.view}>
             <ScrollView>
                 <View style={{alignItems: 'center', paddingVertical: 25}}>
-                    <View style={{marginTop: 60, marginBottom: 10, height: 40, width:'75%', justifyContent: 'center'}}>
+                    <View style={{marginBottom: 10, height: 40, width:'75%', justifyContent: 'center'}}>
                         <Text style={{fontSize: 35, fontWeight: '800', color: '#096D33', textAlign: 'center'}}> Conclua seu cadastro </Text>
                     </View>
                 </View>
                 <View style={styles.viewForm}>
                     <View>
-                        <TextInput placeholder='Primeiro nome' placeholderTextColor='rgba(000,000,000,0.7)' style={{height: 40, borderColor: 'black', borderWidth: 0.5, borderRadius: 10, marginBottom: 8, paddingHorizontal: 10}}/>
-                        <TextInput placeholder='Segundo nome' placeholderTextColor='rgba(000,000,000,0.7)' style={{height: 40, borderColor: 'black', borderWidth: 0.5, borderRadius: 10, marginBottom: 8, paddingHorizontal: 10}}/>
-                        <TextInput placeholder='Email' placeholderTextColor='rgba(000,000,000,0.7)' style={{height: 40, borderColor: 'black', borderWidth: 0.5, borderRadius: 10, marginBottom: 8, paddingHorizontal: 10}}/>
-                        <TextInput placeholder='CPF' placeholderTextColor='rgba(000,000,000,0.7)' style={{height: 40, borderColor: 'black', borderWidth: 0.5, borderRadius: 10, marginBottom: 8, paddingHorizontal: 10}}/>
-                        <TextInput placeholder='Telefone' placeholderTextColor='rgba(000,000,000,0.7)'style={{height: 40, borderColor: 'black', borderWidth: 0.5, borderRadius: 10, marginBottom: 8, paddingHorizontal: 10}}/>
+                        <TextInput underlineColorAndroid='transparent' placeholder='Primeiro nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
+                        <TextInput underlineColorAndroid='transparent' placeholder='Segundo nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
+                        <TextInput underlineColorAndroid='transparent' placeholder='Email' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='email-address' />
+                        <TextInput underlineColorAndroid='transparent' placeholder='CPF' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='numeric' />
+                        <TextInput underlineColorAndroid='transparent' placeholder='Telefone' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='phone-pad' />
+                        <TextInput underlineColorAndroid='transparent' placeholder='Senha' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} secureTextEntry />
+                        <TextInput underlineColorAndroid='transparent' placeholder='Confirmar senha' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} secureTextEntry />
                         <View style={{backgroundColor: '#096D33', marginHorizontal: 30, marginBottom: 50, alignItems: 'center', justifyContent: 'center', height: 50, borderRadius: 10}}>
                             <TouchableHighlight>
-                                <Text style={{fontSize: 18, color: '#fff'}}>
+                                <Text style={{fontSize: 18, color: '#fff'}} onPress={()=>{Actions.inicio()}}>
                                     Concluir cadastro 
                                 </Text>
                             </TouchableHighlight>
@@ -40,7 +43,7 @@ export default class CadastroScreen extends Component {
                     </View>
                 </View>
             </ScrollView>
-        </KeyboardAvoidingView>          
+        </KeyboardAwareScrollView>          
     );
   }
 }
@@ -60,14 +63,13 @@ const color5 = '#f3f3f4';
 
 const styles = StyleSheet.create({
     view: {
-        flex: 1, 
-        padding: 10,
+        flex: 1,
+        padding: 10, 
         backgroundColor: color5,
        
     },
     viewTitulo: {
         flexGrow: 1,
-        marginTop: 25,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -84,15 +86,12 @@ const styles = StyleSheet.create({
         opacity: 0.5
     },
     textInputForm: {
-        marginBottom: 20,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: color3,
-        backgroundColor: 'rgba(255,255,255,1)',
-        paddingHorizontal: 10,
-        fontSize: 20,
-        height: 45,
-        color: color1
+        height: 40, 
+        borderColor: 'black',
+        borderWidth: 0.5, 
+        borderRadius: 10, 
+        marginBottom: 8, 
+        paddingHorizontal: 10
     },
     textForm: {
         marginBottom: 20,

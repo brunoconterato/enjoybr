@@ -12,7 +12,7 @@ import { Actions } from 'react-native-router-flux';
 export default class LoginScreen extends Component {
   render() {
     return (
-        <View style={{flex: 1, marginTop: 50}}>
+        <View style={{flex: 1}}>
             <Image source={require('../imgs/background_green.png')} style={styles.backgroundImage}>
                 <View style={{alignItems: 'center'}}>
                     <View style={{alignItems: 'center'}}>
