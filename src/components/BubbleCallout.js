@@ -1,0 +1,69 @@
+import React, { PropTypes } from 'react';
+import {
+  StyleSheet,
+  View,
+} from 'react-native';
+
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  style: PropTypes.object,
+};
+
+class BubbleCallout extends React.Component {
+  render() {
+    console.log("render BubbleCallout Class");
+    return (
+      <View style={[styles.container, this.props.style]}>
+        <View style={styles.bubble}>
+          <View style={styles.amount}>
+            {this.props.children}
+          </View>
+        </View>
+        <View style={styles.arrowBorder} />
+        <View style={styles.arrow} />
+      </View>
+    );
+  }
+}
+
+BubbleCallout.propTypes = propTypes;
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    alignSelf: 'flex-start',
+  },
+  bubble: {
+    width: 275,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    // backgroundColor: '#4da2ab',
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 6,
+    borderColor: '#007a87',
+    borderWidth: 0.5,
+  },
+  amount: {
+    flex: 1,
+  },
+  arrow: {
+    backgroundColor: 'transparent',
+    borderWidth: 16,
+    borderColor: 'transparent',
+    borderTopColor: '#4da2ab',
+    alignSelf: 'center',
+    marginTop: -32,
+  },
+  arrowBorder: {
+    backgroundColor: 'transparent',
+    borderWidth: 16,
+    borderColor: 'transparent',
+    borderTopColor: '#007a87',
+    alignSelf: 'center',
+    marginTop: -0.5,
+  },
+});
+
+module.exports = BubbleCallout;
