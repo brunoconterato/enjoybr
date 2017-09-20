@@ -26,9 +26,9 @@ export default class CadastroScreen extends Component {
                 </View>
                 <View style={styles.viewForm}>
                     <View>
-                        <TextInput underlineColorAndroid='transparent' placeholder='Primeiro nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
-                        <TextInput underlineColorAndroid='transparent' placeholder='Segundo nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
-                        <TextInput underlineColorAndroid='transparent' placeholder='Email' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='email-address' />
+                        <TextInput underlineColorAndroid='transparent' value = {this.props.first_name} placeholder='Primeiro Nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
+                        <TextInput underlineColorAndroid='transparent' value={this.props.last_name} placeholder='Segundo nome' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} autoCapitalize='words' />
+                        <TextInput underlineColorAndroid='transparent' value={this.props.email} placeholder='email' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='email-address' />
                         <TextInput underlineColorAndroid='transparent' placeholder='CPF' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='numeric' />
                         <TextInput underlineColorAndroid='transparent' placeholder='Telefone' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} keyboardType='phone-pad' />
                         <TextInput underlineColorAndroid='transparent' placeholder='Senha' placeholderTextColor='rgba(000,000,000,0.7)' style={styles.textInputForm} secureTextEntry />

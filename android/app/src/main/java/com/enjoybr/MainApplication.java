@@ -1,5 +1,7 @@
 package com.enjoybr;
 
+import com.magus.fblogin.FacebookLoginPackage;
+
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
@@ -25,7 +27,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-              new MapsPackage()
+              new MapsPackage(),
+              new FacebookLoginPackage()
       );
     }
   };
