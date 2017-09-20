@@ -3,17 +3,17 @@ import { StyleSheet, View } from 'react-native';
 
 import MapView from 'react-native-maps';
 
-import BubbleCallout from './BubbleCallout';
-import CalloutView from './CalloutView';
+import BubbleCallout from '../components/BubbleCallout';
+import CalloutView from '../components/CalloutView';
 
 import { MAP_STYLE } from '../data/MapStyle';
 import { mapMarkers } from '../data/Markers';
 
-export default class MapaComponent extends Component {
+export default class MapScreen extends Component {
   constructor(props){
       super(props);
 
-      console.log("Constructor MapaComponent Class");
+      console.log("Constructor MapaScreen Class");
 
       this.state = {
           markers: mapMarkers
@@ -21,7 +21,7 @@ export default class MapaComponent extends Component {
   }
 
   render() {
-    console.log("render MapaComponent Class");
+    console.log("render MapaScreen Class");
     return (
       <View  style={styles.container}>
         <MapView

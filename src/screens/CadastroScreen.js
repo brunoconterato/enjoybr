@@ -18,7 +18,7 @@ export default class CadastroScreen extends Component {
   render() {
     return (
         <KeyboardAwareScrollView style={styles.view}>
-            <ScrollView>
+            <ScrollView style={ {marginTop: 50} }>
                 <View style={{alignItems: 'center', paddingVertical: 25}}>
                     <View style={{marginBottom: 10, height: 40, width:'75%', justifyContent: 'center'}}>
                         <Text style={{fontSize: 35, fontWeight: '800', color: '#096D33', textAlign: 'center'}}> Conclua seu cadastro </Text>
